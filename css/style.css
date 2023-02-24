@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Poiret+One');
 
 body {
-  background-image: url("../images/pills2.jpg");
+  
   background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
@@ -16,7 +16,7 @@ body {
 
 .card {
   width:80%;
-  top: 50%;
+  top: 80%;
   transform: translateY(-50%);
   background-color: rgba(0,0,0,0.5) !important;
 }
@@ -31,13 +31,11 @@ body {
 .logo .profile {
   margin-left: 50%;
   border-radius: 50%;
+  width:10%;
   transform: translate(-50%);
 }
 
-.logo .tweak {
-  color: #ff5252;
-  font-weight: bold;
-}
+
 
 .form-group {
   margin-top: 1rem;
@@ -89,7 +87,12 @@ body {
 	background: #171d41;
 	border-color: #171d41;
 }
-
+.text{
+  color:white;
+}
+.text a{
+  color:white;
+}
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

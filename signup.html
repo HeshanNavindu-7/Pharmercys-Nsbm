@@ -1,11 +1,41 @@
 
+<?php
+    $servername='localhost';
+    $username='root';
+    $password='';
+    $dbname = "parmercy-nsbm";
+    $conn=mysqli_connect($servername,$username,$password,"$dbname");
+      if(!$conn){
+          die('Could not Connect MySql Server:' );
+        }
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+          $email = $_POST["email"];
+          $password = $_POST["password"];
+
+    // Query the database for the user's credentials
+    $query = "SELECT * FROM signup WHERE email='$email' AND password='$password'";
+    $result = mysqli_query($conn, $query);
+
+    // Authenticate the user
+    if (mysqli_num_rows($result) == 1) {
+        // Redirect to dashboard or home page
+        header("Location: dashboard.php");
+        exit;
+    } else {
+        // Display error message or redirect to login/signup page
+        header("Location: login.php?error=1");
+        exit;
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Pharmacy Management - SETUP</title>
+    <title>QuickMed</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-		
+		<script src="bootstrap/js/jquery.min.js"></script>
 		<script src="bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="shortcut icon" href="images/icon.svg" type="image/x-icon">
@@ -14,14 +44,14 @@
     <script src="js/index.js"></script>
     <script> isSetupDone(); </script>
   </head>
-  <body style="background-image: url('images/bc.jpg');">
+  <body style="background-image: url('images/23.jpeg');">
     <div class="container">
       <div class="card m-auto p-2">
         <div class="card-body">
-          <form name="login-form" class="login-form" action="login.php"  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+          <form name="login-form" class="login-form" action="login.php" method="post" onsubmit="return validateAndSetup();">
             <div class="logo">
-              <h1 class="logo-caption font-weight-bolder"><span class="tweak">P</span>harmacy <span class="tweak">M</span>anagement</h1>
-        			<h2 class="logo-caption font-weight-bolder"><span class="tweak">O</span>ne <span class="tweak">T</span>ime <span class="tweak">S</span>etup</h2>
+              <h1 class="logo-caption font-weight-bolder">Sign Up</h1>
+        			
               <p class="h5 text-center text-light">Enter necessary pharmacy details<p>
         		</div> <!-- logo class -->
 
@@ -90,10 +120,12 @@
               </div>
               <input id="confirm_password" type="password" class="form-control" placeholder="confirm password">
             </div> <!-- input-group class -->
-            <code class="text-light small font-weight-bold float-right mb-2" id="confirm_password_error" style="display: none;"></code>
-
+            <code class="text-light small font-weight-bold float-right mb-2" id="confirm_password_error" style="display: none;"></code> <br><br>
+            <input type="checkbox" name="terms" id="terms" onchange="activateButton(this)"> <span class="text">I Agree Terms & Coditions</span>
             <div class="form-group">
               <button class="btn btn-default btn-block btn-custom">START</button>
+              <br>
+<span class="text">Already have an account?<a href="sign in.html" >   Sign In</a></span>
             </div>
           </form><!-- form close -->
         </div> <!-- cord-body class -->

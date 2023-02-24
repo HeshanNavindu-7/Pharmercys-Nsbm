@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css?family=Numans');
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');
+
+body {
+  background-image: url("../images/pills2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  font-family: 'Numans', sans-serif;
+  color: #171d41;
+}
+
+
+.form-group {
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+
+input::placeholder, textarea::placeholder {
+    color: #dddddd;
+}
+
+input, textarea {
+    margin-top: 1rem;
+    
+  margin-bottom: 0;
+  background: #171d41;
+  width: 400px;
+  border: px;
+  min-width: 40px;
+
+	color: white;
+	font-family: 'Nunito', sans-serif;
+    padding: 20px;
+    display: block;
+    margin:auto;
+    
+}
+
+input:focus,  textarea:focus {
+    outline: 0 0 0 0  !important;
+    box-shadow: 0 0 0 0 !important;
+    background-color: #607bf1;
+    color: #ffffff;
+      font-family: 'Nunito', sans-serif;
+      
+  }
+
+button{
+  background: #3d98ee;
+    border-color: rgba(48, 46, 45, 1);
+  color: #ffffff;
+  font-weight: bold;
+  width: 100%;
+  display: block;
+  margin:auto;
+  padding: 10px;
+}
+
+button:hover{
+	-webkit-transition: all 500ms ease;
+	-moz-transition: all 500ms ease;
+	-ms-transition: all 500ms ease;
+	-o-transition: all 500ms ease;
+	transition: all 500ms ease;
+	background: #171d41;
+	border-color: #171d41;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
