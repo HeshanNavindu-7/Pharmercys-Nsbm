@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="inventory.css">
+</head>
+<body style="background-image: url('images/cap.jpg');">
+    <h3 class="add-new-drug"> Inventory/add new drug</h3>
+<div class="row col col-md-12">
+  <div class="col col-md-8 form-group">
+    
+    <input type="text" class="form-control" id="medicine_name" placeholder="Select Drug Name" onblur="notNull(this.value, 'medicine_name_error');">
+    
+  <div class="col col-md-4 form-group">
+    
+    <input type="text" class="form-control" id="manufacturer" placeholder="Manufacturer" onblur="notNull(this.value, 'pack_error');">
+    <code class="text-danger small font-weight-bold float-right" id="pack_error" style="display: none;"></code>
+  </div>
+</div>
+
+
+<div class="row col col-md-12">
+  <div class="col col-md-12 form-group">
+    
+    <input id="suppliers_name" type="text" class="form-control"  placeholder="Supplier Name" name="suppliers_name" onkeyup="showSuggestions(this.value, 'supplier');">
+    
+  </div>
+</div>
+
+<div class="row col col-md-12">
+    <div class="col col-md-12 form-group">
+      
+      <input  type="text" class="form-control" id="drug_code" placeholder="NDC (National Drug Code)" name="drug_code" onkeyup="showSuggestions(this.value, 'supplier');">
+      
+    </div>
+  </div>
+
+  <div class="row col col-md-12">
+    <div class="col col-md-12 form-group">
+      
+      <input type="text" class="form-control" id="exp_date" placeholder="Select Expiration Date" name="exp_date" onkeyup="showSuggestions(this.value, 'supplier');">
+      
+    </div>
+  </div>
+
+  <div class="row col col-md-12">
+    <div class="col col-md-12 form-group">
+      
+      <input  type="text" class="form-control" id="quantity" placeholder="Quantity on hand" name="quantity" onkeyup="showSuggestions(this.value, 'supplier');">
+      
+  </div>
+
+  <div class="row col col-md-12">
+    <div class="col col-md-12 form-group">
+     
+      <input  type="text" class="form-control" id="unit_price" placeholder="Unit Price" name="unit_price" onkeyup="showSuggestions(this.value, 'supplier');">
+      
+  </div>
+
+
+
+
+
+<!-- new user button -->
+<div class="row col col-md-12">
+  &emsp;
+  <div class="form-group m-auto">
+    <button class="btn btn-primary form-control" onclick="addDrug();">ADD DRUG</button>
+  </div>
+
+</div>
+<!-- customer details content end -->
+<!-- result message -->
+<div id="medicine_acknowledgement" class="col-md-12 h5 text-success font-weight-bold text-center" style="font-family: sans-serif;"></div>
+
+  </body>
+</html>

@@ -1,13 +1,16 @@
 
+
+
 <?php
     $servername='localhost';
     $username='root';
     $password='';
     $dbname = "parmercy-nsbm";
     $conn=mysqli_connect($servername,$username,$password,"$dbname");
-      if(!$conn){
-          die('Could not Connect MySql Server:' );
-        }
+    if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+    }
+    echo "Connected successfully";
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
           $email = $_POST["email"];
