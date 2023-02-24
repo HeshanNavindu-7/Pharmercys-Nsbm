@@ -5,15 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
     <link rel="stylesheet" href="dashbord.css">
 </head>
 <body style="background-image: url('images/cap.jpg');">
-  <header>
-    <nav>
-        <h1>Lanka Pharmarcy</h1>
-    </nav>
-  </header>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">WebSiteName</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Page 1-1</a></li>
+                <li><a href="#">Page 1-2</a></li>
+                <li><a href="#">Page 1-3</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Page 2</a></li>
+            <li><a href="#">Page 3</a></li>
+          </ul>
+        </div>
+      </nav>
   <h3 class="add-new-drug"> Inventory/add new drug</h3>
   <div class="row col col-md-12">
     <div class="col col-md-8 form-group">
@@ -29,7 +44,7 @@
 
   <div class="row col col-md-12">
     <div class="col col-md-8 form-group">
-      
+      <label for=""></label>
       <input type="text" class="form-control" id="medicine_name" placeholder="Select Drug Name" onblur="notNull(this.value, 'medicine_name_error');">
       
     <div class="col col-md-4 form-group">
